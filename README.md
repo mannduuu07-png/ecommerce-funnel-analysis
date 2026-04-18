@@ -33,4 +33,4 @@ Implement targeted re-engagement strategies (e.g., push notifications or promo i
 - 05_dropoff_last_event.sql
 
 ## Dashboard Preview
-![dashboard](./dashboard_preview.png)
+![dashboard](dashboard_preview.png)
