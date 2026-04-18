@@ -25,10 +25,9 @@ SQL (SQLite), Tableau
 Implement targeted re-engagement strategies (e.g., push notifications or promo incentives within a few hours of cart activity) to recover high-intent users abandoning at the cart stage.
 
 ## Project Structure
-├── queries/
-│   ├── 01_booking_level.sql
-│   ├── 02_daily_success_rate.sql
-│   ├── 03_success_rate_by_region.sql
-│   ├── 04_funnel_analysis.sql
-│   └── 05_dropoff_last_event.sql
-└── README.md
+**queries/**
+- 01_booking_level.sql
+- 02_daily_success_rate.sql
+- 03_success_rate_by_region.sql
+- 04_funnel_analysis.sql
+- 05_dropoff_last_event.sql
