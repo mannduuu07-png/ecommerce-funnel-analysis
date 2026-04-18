@@ -35,6 +35,6 @@ Implement targeted re-engagement strategies (e.g., push notifications or promo i
 ## Dashboard Preview
 ![DAU Trend](1.%20DAU%20Trend.png)
 ![Daily Success Rate](2.%20Daiily%20Success%20Rate.png)
-![Success Rate by Region](3.%20Success%20Rate%20by%20Re....png)
+![Success Rate by Region](3.%20Success%20Rate%20by%20Regionpng) 
 ![Drop-Off Analysis](4.%20Drop-Off%20Analysis.png)
 ![Funnel Overview](5.%20Funnel%20Overview.png)
