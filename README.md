@@ -31,3 +31,6 @@ Implement targeted re-engagement strategies (e.g., push notifications or promo i
 - 03_success_rate_by_region.sql
 - 04_funnel_analysis.sql
 - 05_dropoff_last_event.sql
+
+## Dashboard Preview
+![dashboard](./dashboard_preview.png)
