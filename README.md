@@ -1,7 +1,7 @@
 # eCommerce Transaction & Behavior Analysis
 
 ## Overview
-Analyzed transaction, clickstream, and customer data from an Indonesian eCommerce platform to evaluate payment performance and identify user drop-off patterns across the purchase funnel.
+Analyzed transaction, clickstream, and customer data from an Indonesian eCommerce platform to identify key drop-off points and evaluate payment performance across the purchase funnel.
 
 ## Data Sources
 - `transactions` — payment and order-level transaction records
@@ -13,8 +13,8 @@ SQL (SQLite), Tableau
 
 ## Key Analysis
 - Funnel analysis using event sequence tracking
-- Drop-off identification based on last interaction events
 - Segmentation of non-converting sessions for behavioral analysis
+- Drop-off identification based on last interaction events
 
 ## Key Questions
 1. Is the payment success rate stable across regions and devices?
@@ -22,12 +22,12 @@ SQL (SQLite), Tableau
 
 ## Key Findings
 - Payment success rate remained stable at 95.7% across regions and devices
-- Minimal gap between new and returning users (0.04%p), indicating systemic rather than behavioral issues
+- Minimal gap between new and returning users (0.04%p), suggesting failure drivers are not user-segment-specific
 - 95% overlap between sessions and transactions suggests dataset bias toward completed purchases
-- Of 42,621 non-converting sessions, 15.3% dropped off at ADD_TO_CART, making cart abandonment the highest-impact intervention point
+- Of 42,621 non-converting sessions, 15.3% dropped off at ADD_TO_CART, identifying cart abandonment as the highest-impact intervention point
 
 ## Recommendation
-Implement targeted re-engagement strategies (e.g., push notifications or promo incentives within a few hours of cart activity) to recover high-intent users abandoning at the cart stage.
+Prioritize targeted re-engagement strategies (e.g., push notifications or promo incentives within a few hours of cart activity) to recover high-intent users abandoning at the cart stage.
 
 ## Business Interpretation
 Shifted focus from payment system performance to user behavior optimization, prioritizing cart abandonment recovery as the key lever for conversion improvement.
