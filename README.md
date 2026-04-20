@@ -1,12 +1,12 @@
 # eCommerce Transaction & Behavior Analysis
 
 ## Overview
-Analyzed 850K+ transaction and clickstream records from an Indonesian eCommerce platform to evaluate payment performance and identify user drop-off patterns across the purchase funnel.
+Analyzed transaction, clickstream, and customer data from an Indonesian eCommerce platform to evaluate payment performance and identify user drop-off patterns across the purchase funnel.
 
 ## Data Sources
-- `transactions` — 850K+ payment records
+- `transactions` — payment and order-level transaction records
 - `click_stream` — user session behavior logs
-- `customer` — user demographic info
+- `customer` — user demographic and location data
 
 ## Tools
 SQL (SQLite), Tableau
