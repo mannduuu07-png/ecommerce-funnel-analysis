@@ -11,6 +11,11 @@ Analyzed 850K+ transaction and clickstream records from an Indonesian eCommerce 
 ## Tools
 SQL (SQLite), Tableau
 
+## Key Analysis
+- Funnel analysis using event sequence tracking
+- Drop-off identification based on last interaction events
+- Segmentation of non-converting sessions for behavioral analysis
+
 ## Key Questions
 1. Is the payment success rate stable across regions and devices?
 2. Where do users drop off before completing a purchase?
@@ -23,6 +28,9 @@ SQL (SQLite), Tableau
 
 ## Recommendation
 Implement targeted re-engagement strategies (e.g., push notifications or promo incentives within a few hours of cart activity) to recover high-intent users abandoning at the cart stage.
+
+## Business Interpretation
+Shifted focus from payment system performance to user behavior optimization, prioritizing cart abandonment recovery as the key lever for conversion improvement.
 
 ## Project Structure
 **queries**
