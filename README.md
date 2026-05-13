@@ -3,10 +3,11 @@
 ## Overview
 Analyzed transaction, clickstream, and customer data from an Indonesian eCommerce platform to identify key drop-off points and evaluate payment performance across the purchase funnel.
 
-## Data Sources
-- `transactions` — payment and order-level transaction records
-- `click_stream` — user session behavior logs
-- `customer` — user demographic and location data
+- ## Data Sources
+- `transactions` — 852,584 rows (2016.07 ~ 2022.07)
+- `click_stream` — 12,833,602 rows (2016.07 ~ 2022.08)
+- `customer` — 100,000 rows
+- `product` — 42,388 rows
 
 ## Tools
 SQL (SQLite), Tableau
