@@ -108,6 +108,15 @@ and intervene at high-leverage stages.**
 - 04_funnel_analysis.sql
 - 05_dropoff_last_event.sql
 
+queries/
+├── 01_booking_level.sql          # Transaction-level data aggregation
+├── 02_daily_success_rate.sql     # Payment success rate time series
+├── 03_success_rate_by_region.sql # Regional/device segmentation
+├── 04_funnel_analysis.sql        # 5-stage conversion funnel
+└── 05_dropoff_last_event.sql     # Non-converting session classification
+
+*All SQL queries use SQLite syntax with CTEs and window functions for multi-stage analysis.*
+
 ---
 
 ## 📊 Dashboard Preview
