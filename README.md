@@ -49,11 +49,11 @@ point to recover it?
 ### ✅ Payment System is Not the Problem
 - Payment success rate: **95.7%** (stable across regions and devices)
 - Minimal gap between new vs returning users (0.04%p)
-- **Insight:** Failure drivers are operational, not user-segment-specific
+- **Insight:** The primary revenue leakage appears to be behavioral rather than payment-system- or segment-specific.
 
 ### 🚨 Cart Abandonment is the Primary Revenue Leak
 - Of 42,621 non-converting sessions, **15.3% dropped off at ADD_TO_CART**
-- These users demonstrated strong purchase intent but abandoned before checkout
+- These sessions reached the cart stage but did not proceed to a completed transaction
 - **Insight:** This is the highest-impact intervention point
 
 ### ⚠️ Dataset Limitation Identified
@@ -71,36 +71,33 @@ point to recover it?
 - **Tactic 2:** Personalized promo incentives for high-value abandoned carts
 - **Tactic 3:** A/B test messaging strategies (urgency vs discount-driven)
 
-**Expected Impact:** Even a 10% recovery rate at this stage could significantly 
-improve overall conversion, as these users have already cleared earlier funnel stages.
+**Illustrative Impact:** Recovering even 10% of the observed ADD_TO_CART drop-offs
+would convert approximately 650 additional sessions within the analyzed dataset,
+illustrating the potential value of targeted intervention.
 
 ---
 
-## 🔄 Transferable Skills to Revenue Management
+## 🔄 Relevance to Supply Planning
 
-This analysis demonstrates core capabilities applicable to hospitality revenue management:
+Although this project focuses on eCommerce conversion rather than inventory planning,
+it demonstrates analytical capabilities relevant to supply planning:
 
-| eCommerce Analysis | Hotel Revenue Management Equivalent |
-|-------------------|-------------------------------------|
-| Cart abandonment funnel | Booking abandonment analysis (search → reserve) |
-| Regional demand patterns | Market segment forecasting (leisure/corporate/group) |
-| Payment success rate validation | Channel performance evaluation (OTA vs Direct) |
-| Re-engagement strategy | Yield management & dynamic pricing adjustments |
+| Project Capability | Relevance to Supply Planning |
+| --- | --- |
+| Performance analysis across regions and customer segments | Identifying meaningful variations and exceptions requiring investigation |
+| KPI monitoring through Tableau dashboards | Tracking operational indicators and communicating performance trends |
+| Funnel and non-converting session analysis | Detecting process bottlenecks and prioritizing high-impact issues |
+| Payment-system hypothesis validation | Distinguishing systemic problems from behavioral or segment-specific factors |
+| Data limitation assessment | Evaluating data reliability before making operational recommendations |
 
-**Core Principle:** Whether optimizing eCommerce conversion or hotel occupancy, 
-the approach is the same—**identify demand patterns, quantify leakage points, 
-and intervene at high-leverage stages.**
-
-**Industries where this framework applies:**  
-✅ Hospitality (hotel/function space revenue optimization)  
-✅ SaaS (subscription conversion & churn reduction)  
-✅ Travel & Transportation (flight/package booking optimization)
+**Core Principle:** Effective planning requires identifying meaningful variations,
+validating their underlying causes, prioritizing high-impact issues, and translating
+findings into measurable corrective actions.
 
 ---
 
 ## 📂 Project Structure
 
-## Project Structure
 **queries**
 - 01_booking_level.sql
 - 02_daily_success_rate.sql
@@ -156,8 +153,9 @@ and intervene at high-leverage stages.**
 1. **Data-driven prioritization:** Shifted focus from payment system to user behavior 
    after quantifying technical vs behavioral failure rates
 
-2. **High-leverage thinking:** Identified cart abandonment as the stage where 
-   intervention has the highest ROI (strong intent + clear drop-off signal)
+2. **High-leverage thinking:** Identified cart abandonment as a priority intervention
+   point based on strong purchase intent and a clearly measurable drop-off signal.
 
-3. **Transferable methodology:** This funnel-based revenue recovery framework 
-   applies to any industry with multi-stage customer decision flows
+3. **Operational relevance:** Demonstrated a structured approach to KPI monitoring,
+   exception identification, root-cause investigation, and corrective action
+   prioritization.
