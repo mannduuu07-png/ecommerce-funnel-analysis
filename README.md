@@ -23,7 +23,7 @@ point to recover it?
 ## 🎯 Key Questions
 1. Is the payment success rate stable across regions and devices?
 2. Where do users drop off before completing a purchase?
-3. Which drop-off stage represents the highest revenue recovery opportunity?
+3. Which drop-off stage represents the highest-priority conversion recovery opportunity?
 
 ---
 
@@ -46,12 +46,12 @@ point to recover it?
 
 ## 💡 Key Findings
 
-### ✅ Payment System is Not the Problem
+### ✅ No Major Payment-System Issue Detected
 - Payment success rate: **95.7%** (stable across regions and devices)
 - Minimal gap between new vs returning users (0.04%p)
 - **Insight:** The primary revenue leakage appears to be behavioral rather than payment-system- or segment-specific.
 
-### 🚨 Cart Abandonment is the Primary Revenue Leak
+### 🚨 Cart Abandonment is a High-Priority Recovery Opportunity
 - Of 42,621 non-converting sessions, **15.3% dropped off at ADD_TO_CART**
 - These sessions reached the cart stage but did not proceed to a completed transaction
 - **Insight:** This is the highest-impact intervention point
@@ -71,18 +71,19 @@ point to recover it?
 - **Tactic 2:** Personalized promo incentives for high-value abandoned carts
 - **Tactic 3:** A/B test messaging strategies (urgency vs discount-driven)
 
-**Illustrative Impact:** Recovering even 10% of the observed ADD_TO_CART drop-offs
-would convert approximately 650 additional sessions within the analyzed dataset,
-illustrating the potential value of targeted intervention.
+**Illustrative Impact:** Assuming a 10% recovery rate among the observed
+ADD_TO_CART drop-offs, approximately 650 additional sessions could convert.
+This estimate illustrates the potential scale of intervention before accounting
+for order value or campaign costs.
 
 ---
 
-## 🔄 Relevance to Supply Planning
+## 🔄 Operational & Planning Relevance
 
-Although this project focuses on eCommerce conversion rather than inventory planning,
-it demonstrates analytical capabilities relevant to supply planning:
+This project demonstrates analytical capabilities transferable to data-driven
+operational and planning roles:
 
-| Project Capability | Relevance to Supply Planning |
+| Project Capability | Transferable Application |
 | --- | --- |
 | Performance analysis across regions and customer segments | Identifying meaningful variations and exceptions requiring investigation |
 | KPI monitoring through Tableau dashboards | Tracking operational indicators and communicating performance trends |
@@ -90,9 +91,9 @@ it demonstrates analytical capabilities relevant to supply planning:
 | Payment-system hypothesis validation | Distinguishing systemic problems from behavioral or segment-specific factors |
 | Data limitation assessment | Evaluating data reliability before making operational recommendations |
 
-**Core Principle:** Effective planning requires identifying meaningful variations,
-validating their underlying causes, prioritizing high-impact issues, and translating
-findings into measurable corrective actions.
+**Core Principle:** Effective operational decision-making requires identifying
+meaningful variations, validating their underlying causes, prioritizing high-impact
+issues, and translating findings into measurable corrective actions.
 
 ---
 
