@@ -118,7 +118,7 @@ issues, and translating findings into measurable corrective actions.
 
 ### 2. Payment Success Rate Monitoring
 ![Daily Success Rate](2_daily_success_rate.png)
-*Validated 95.7% success rate stability, ruling out system issues*
+*Validated 95.7% success rate stability, indicating no major payment-system issue in the available data.*
 
 ### 3. Regional Performance Breakdown
 ![Success Rate by Region](3_success_rate_by_region.png)
@@ -126,7 +126,7 @@ issues, and translating findings into measurable corrective actions.
 
 ### 4. Drop-Off Stage Analysis
 ![Drop-Off Analysis](4_dropoff_analysis.png)
-*Identified cart abandonment (15.3%) as primary intervention opportunity*
+*Identified cart abandonment (15.3%) as a high-priority intervention opportunity.*
 
 ### 5. Full Funnel Overview
 ![Funnel Overview](5_funnel_overview.png)
