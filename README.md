@@ -100,7 +100,7 @@ issues, and translating findings into measurable corrective actions.
 ## 📂 Project Structure
 
 **queries**
-- 01_booking_level.sql
+- 01_transaction_level.sql
 - 02_daily_success_rate.sql
 - 03_success_rate_by_region.sql
 - 04_funnel_analysis.sql
