@@ -31,7 +31,7 @@ point to recover it?
 
 ### 1. Payment System Validation
 - Evaluated payment success rate across regions, devices, and user segments
-- **Goal:** Rule out technical/system issues before investigating behavioral factors
+- **Goal:** Assess whether payment-system performance is a major driver before investigating behavioral factors
 
 ### 2. Funnel Analysis
 - Built 5-stage event sequence tracking to quantify drop-off at each decision point
@@ -49,12 +49,12 @@ point to recover it?
 ### ✅ No Major Payment-System Issue Detected
 - Payment success rate: **95.7%** (stable across regions and devices)
 - Minimal gap between new vs returning users (0.04%p)
-- **Insight:** The primary revenue leakage appears to be behavioral rather than payment-system- or segment-specific.
+- **Insight:** The observed leakage appears more closely related to pre-purchase behavior than to payment processing or specific user segments.
 
 ### 🚨 Cart Abandonment is a High-Priority Recovery Opportunity
 - Of 42,621 non-converting sessions, **15.3% dropped off at ADD_TO_CART**
 - These sessions reached the cart stage but did not proceed to a completed transaction
-- **Insight:** This is the highest-impact intervention point
+- **Insight:** This represents a high-priority intervention point due to its advanced position in the purchase funnel.
 
 ### ⚠️ Dataset Limitation Identified
 - 95% overlap between sessions and transactions suggests bias toward completed purchases
@@ -65,7 +65,7 @@ point to recover it?
 
 ## 📈 Business Recommendation
 
-**Prioritize cart abandonment recovery** as the primary revenue optimization lever:
+**Prioritize cart abandonment recovery** as a key conversion optimization lever:
 
 - **Tactic 1:** Time-sensitive push notifications (within 2-4 hours of cart activity)
 - **Tactic 2:** Personalized promo incentives for high-value abandoned carts
