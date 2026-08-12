@@ -1,9 +1,9 @@
 # eCommerce Revenue Leakage & Conversion Optimization Analysis
 
 ## Overview
-Analyzed 852,584 transaction records and 12.8 million clickstream events from anIndonesian eCommerce platform to evaluate payment reliability, trace purchase-funnelbehavior, and identify an actionable conversion-recovery opportunity.
+Analyzed 852,584 transaction records and 12.8 million clickstream events from an Indonesian eCommerce platform to evaluate payment reliability, trace purchase-funnel behavior, and identify an actionable conversion-recovery opportunity.
 
-**Business Question:** Where does observable conversion leakage occur, and whichbehavior represents the most actionable recovery opportunity in the available data?
+**Business Question:** Where does observable conversion leakage occur, and which behavior represents the most actionable recovery opportunity in the available data?
 
 ---
 
@@ -28,8 +28,8 @@ Analyzed 852,584 transaction records and 12.8 million clickstream events from an
 ## 🔍 Analysis Approach
 
 ### 1. Booking-Level Data Preparation
-- Re-aggregated transaction-line records to one row per 'booking_id' and customer
-- Marked a booking as failed when any underlying transaction row was marked 'Failed'
+- Re-aggregated transaction-line records to one row per `booking_id` and customer
+- Marked a booking as failed when any underlying transaction row was marked `Failed`
 - **Goal:** Prevent multi-item bookings from being counted more than once
 
 ### 2. Payment KPI Validation
@@ -38,7 +38,7 @@ Analyzed 852,584 transaction records and 12.8 million clickstream events from an
 - **Goal:** Assess whether payment failures were concentrated over time or by region
 
 ### 3. Milestone Funnel Analysis
-- Built a three-stage ordered funnel: 'HOMEPAGE' → 'ADD_TO_CART' → 'BOOKING'
+- Built a three-stage ordered funnel: `HOMEPAGE` → `ADD_TO_CART` → `BOOKING`
 - Measured session progression using the first timestamp recorded for each event
 - **Goal:** Evaluate observed movement through major purchase milestones
 
@@ -58,13 +58,13 @@ Analyzed 852,584 transaction records and 12.8 million clickstream events from an
 - **Insight:** The available data did not reveal a major time- or region-specific payment issue, shifting attention toward pre-transaction behavior
 
 ### ⚠️ Headline Funnel Rates Are Affected by Data Coverage
-- pproximately **95% of clickstream sessions also appear in the transactions data**
+- Approximately **95% of clickstream sessions also appear in the transactions data**
 - The three-stage funnel therefore produced unusually high progression rates of approximately 97–98%
 - **Insight:** The headline funnel is useful for describing the recorded sample but should not be treated as a representative platform-wide conversion rate
 
 ### 🚨 Cart-Ending Sessions Are a High-Priority Recovery Opportunity
 - Identified **42,621 clickstream sessions with no transaction record**
-- **15.3% ended at 'ADD_TO_CART'**
+- **15.3% ended at `ADD_TO_CART`**
 - These sessions reached a late purchase milestone but did not generate a transaction record
 - **Insight:** Cart-ending sessions represent an actionable, high-intent group for targeted recovery efforts
 
@@ -79,7 +79,7 @@ Analyzed 852,584 transaction records and 12.8 million clickstream events from an
                 value data is available
 - **Tactic 3:** A/B test urgency-based versus incentive-based messaging
 
-**Illustrative Impact:** A hypothetical 10% recovery among the observed 'ADD_TO_CART'-ending sessions would correspond to approximately **650 additionalsessions reaching a transaction record**, before accounting for order value,campaign cost, or incremental conversion effects.
+**Illustrative Impact:** A hypothetical 10% recovery among the observed `ADD_TO_CART`-ending sessions would correspond to approximately **650 additional sessions reaching a transaction record**, before accounting for order value, campaign cost, or incremental conversion effects.
 
 ---
 
@@ -113,11 +113,11 @@ The analysis uses SQLite CTEs, conditional aggregation, joins, and window functi
 
 ## 📊 Dashboard Preview
 
-### 1.Daily Purchasing Customers Trend
+### 1. Daily Purchasing Customers Trend
 ![DAU Trend](1_dau_trend.png)
 *Tracked customers with at least one successful booking by day; this metric is not platform-wide DAU.*
 
-### 2.Payment Success Rate Monitoring
+### 2. Payment Success Rate Monitoring
 ![Daily Success Rate](2_daily_success_rate.png)
 *Monitored booking-level payment success rates over time.*
 
@@ -127,13 +127,13 @@ The analysis uses SQLite CTEs, conditional aggregation, joins, and window functi
 
 ### 4. Drop-Off Last-Event Analysis
 ![Drop-Off Analysis](4_dropoff_analysis.png)
-*Found that 15.3% of sessions with no transaction record ended at 'ADD_TO_CART'.*
+*Found that 15.3% of sessions with no transaction record ended at `ADD_TO_CART`.*
 
 ### 5. Milestone Funnel Overview
 ![Funnel Overview](5_funnel_overview.png)
-*Visualized progression across 'HOMEPAGE' → 'ADD_TO_CART' → 'BOOKING'.*
+*Visualized progression across `HOMEPAGE` → `ADD_TO_CART` → `BOOKING`.*
 
-Coverage note: Approximately 95% of clickstream sessions overlap with sessionsin the transactions data. The funnel therefore describes a transaction-heavy sampleand should not be interpreted as a platform-wide conversion benchmark.
+Coverage note: Approximately 95% of clickstream sessions overlap with sessions in the transactions data. The funnel therefore describes a transaction-heavy sample and should not be interpreted as a platform-wide conversion benchmark.
 
 ---
 
@@ -144,8 +144,8 @@ Coverage note: Approximately 95% of clickstream sessions overlap with sessionsin
 - CTEs for reusable analytical stages
 - Conditional aggregation for KPI calculation
 - Ordered event timestamps for milestone-funnel construction
-- 'ROW_NUMBER()' to assign one final event per session
-- 'NOT EXISTS' to isolate sessions with no transaction record
+- `ROW_NUMBER()` to assign one final event per session
+- `NOT EXISTS` to isolate sessions with no transaction record
 
 **Tableau Features:**
 - Calculated fields for conversion and payment-success metrics
