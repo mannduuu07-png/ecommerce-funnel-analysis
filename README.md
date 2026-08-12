@@ -111,32 +111,6 @@ The analysis uses SQLite CTEs, conditional aggregation, joins, and window functi
 
 ---
 
-## 📊 Dashboard Preview
-
-### 1. Daily Purchasing Customers Trend
-
-*Tracked customers with at least one successful booking by day; this metric is not platform-wide DAU.*
-
-### 2. Payment Success Rate Monitoring
-
-*Monitored booking-level payment success rates over time.*
-
-### 3. Regional Performance Breakdown
-
-*Found limited regional variation in booking-level payment success rates.*
-
-### 4. Drop-Off Last-Event Analysis
-
-*Found that 15.3% of sessions with no transaction record ended at `ADD_TO_CART`.*
-
-### 5. Milestone Funnel Overview
-
-*Visualized progression across `HOMEPAGE` → `ADD_TO_CART` → `BOOKING`.*
-
-Coverage note: Approximately 95% of clickstream sessions overlap with sessions in the transactions data. The funnel therefore describes a transaction-heavy sample and should not be interpreted as a platform-wide conversion benchmark.
-
----
-
 ## 🛠️ Technical Implementation
 
 **SQL Techniques Used:**
@@ -146,11 +120,6 @@ Coverage note: Approximately 95% of clickstream sessions overlap with sessions i
 - Ordered event timestamps for milestone-funnel construction
 - `ROW_NUMBER()` to assign one final event per session
 - `NOT EXISTS` to isolate sessions with no transaction record
-
-**Tableau Features:**
-- Calculated fields for conversion and payment-success metrics
-- Date and region filters
-- Trend and benchmark comparisons
 
 ---
 
