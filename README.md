@@ -1,18 +1,15 @@
 # eCommerce Revenue Leakage & Conversion Optimization Analysis
 
 ## Overview
-Analyzed 850K+ transactions and 12.8M clickstream events from an Indonesian eCommerce 
-platform to diagnose revenue loss across the purchase funnel and identify high-impact 
-intervention opportunities.
+Analyzed 852,584 transaction records and 12.8 million clickstream events from anIndonesian eCommerce platform to evaluate payment reliability, trace purchase-funnelbehavior, and identify an actionable conversion-recovery opportunity.
 
-**Business Question:** Where are we losing revenue, and what's the highest-leverage 
-point to recover it?
+**Business Question:** Where does observable conversion leakage occur, and whichbehavior represents the most actionable recovery opportunity in the available data?
 
 ---
 
 ## 📊 Data Sources
-- `transactions` — 852,584 rows (2016.07 ~ 2022.07)
-- `click_stream` — 12,833,602 rows (2016.07 ~ 2022.08)
+- `transactions` — 852,584 rows (2016.07–2022.07)
+- `click_stream` — 12,833,602 rows (2016.07–2022.08)
 - `customer` — 100,000 rows
 - `product` — 42,388 rows
 
@@ -21,142 +18,149 @@ point to recover it?
 ---
 
 ## 🎯 Key Questions
-1. Is the payment success rate stable across regions and devices?
-2. Where do users drop off before completing a purchase?
-3. Which drop-off stage represents the highest-priority conversion recovery opportunity?
+1. Is the booking-level payment success rate stable over time and across regions?
+2. How do sessions progress through the major purchase milestones?
+3. Where do sessions with no transaction record end their journeys?
+4. How does the dataset's session coverage affect interpretation of the funnel?
 
 ---
 
 ## 🔍 Analysis Approach
 
-### 1. Payment System Validation
-- Evaluated payment success rate across regions, devices, and user segments
-- **Goal:** Assess whether payment-system performance is a major driver before investigating behavioral factors
+### 1. Booking-Level Data Preparation
+- Re-aggregated transaction-line records to one row per 'booking_id' and customer
+- Marked a booking as failed when any underlying transaction row was marked 'Failed'
+- **Goal:** Prevent multi-item bookings from being counted more than once
 
-### 2. Funnel Analysis
-- Built a four-stage ordered funnel sequence tracking to quantify drop-off at each decision point
-- **Goal:** Identify where potential revenue is being lost
+### 2. Payment KPI Validation
+- Calculated daily booking-level payment success rates
+- Compared success rates across customer home regions
+- **Goal:** Assess whether payment failures were concentrated over time or by region
 
-### 3. Non-Converting Session Segmentation
-- Isolated 42,621 sessions without completed purchases
-- Categorized by last interaction event to pinpoint abandonment patterns
-- **Goal:** Determine which stage has the highest recovery potential
+### 3. Milestone Funnel Analysis
+- Built a three-stage ordered funnel: 'HOMEPAGE' → 'ADD_TO_CART' → 'BOOKING'
+- Measured session progression using the first timestamp recorded for each event
+- **Goal:** Evaluate observed movement through major purchase milestones
+
+### 4. Coverage and Last-Event Analysis
+- Measured the overlap between clickstream sessions and sessions appearing in transactions
+- Isolated 42,621 clickstream sessions with no transaction record
+- Classified each session by its final recorded event
+- **Goal:** Interpret the unusually high funnel rates and identify a practical recovery target
 
 ---
 
 ## 💡 Key Findings
 
-### ✅ No Major Payment-System Issue Detected
-- Payment success rate: **95.7%** (stable across regions and devices)
-- Minimal gap between single-booking and repeat-booking customer groups (0.04%p)
-- **Insight:** The observed leakage appears more closely related to pre-purchase behavior than to payment processing or specific user segments.
+### ✅ No Concentrated Payment-Failure Pattern Detected
+- Overall booking-level payment success rate: 95.7%
+- Daily rates remained broadly stable, and regional differences were limited
+- **Insight:** The available data did not reveal a major time- or region-specific payment issue, shifting attention toward pre-transaction behavior
 
-### 🚨 Cart Abandonment is a High-Priority Recovery Opportunity
-- Of 42,621 non-converting sessions, **15.3% dropped off at ADD_TO_CART**
-- These sessions reached the cart stage but did not proceed to a completed transaction
-- **Insight:** This represents a high-priority intervention point due to its advanced position in the purchase funnel.
+### ⚠️ Headline Funnel Rates Are Affected by Data Coverage
+- pproximately **95% of clickstream sessions also appear in the transactions data**
+- The three-stage funnel therefore produced unusually high progression rates of approximately 97–98%
+- **Insight:** The headline funnel is useful for describing the recorded sample but should not be treated as a representative platform-wide conversion rate
 
-### ⚠️ Dataset Limitation Identified
-- 95% overlap between sessions and transactions suggests bias toward completed purchases
-- Real-world abandonment rates are likely higher
-- **Action Taken:** Acknowledged limitation and focused analysis on available data
+### 🚨 Cart-Ending Sessions Are a High-Priority Recovery Opportunity
+- Identified **42,621 clickstream sessions with no transaction record**
+- **15.3% ended at 'ADD_TO_CART'**
+- These sessions reached a late purchase milestone but did not generate a transaction record
+- **Insight:** Cart-ending sessions represent an actionable, high-intent group for targeted recovery efforts
 
 ---
 
 ## 📈 Business Recommendation
 
-**Prioritize cart abandonment recovery** as a key conversion optimization lever:
+**Prioritize cart abandonment recovery** as a key conversion-optimization lever:
 
-- **Tactic 1:** Time-sensitive push notifications (within 2-4 hours of cart activity)
-- **Tactic 2:** Personalized promo incentives for high-value abandoned carts
-- **Tactic 3:** A/B test messaging strategies (urgency vs discount-driven)
+- **Tactic 1:** Send time-sensitive reminders within 2–4 hours of cart activity
+- **Tactic 2:** Test personalized incentives, prioritizing higher-value carts when cart-
+                value data is available
+- **Tactic 3:** A/B test urgency-based versus incentive-based messaging
 
-**Illustrative Impact:** Assuming a 10% recovery rate among the observed
-ADD_TO_CART drop-offs, approximately 650 additional sessions could convert.
-This estimate illustrates the potential scale of intervention before accounting
-for order value or campaign costs.
+**Illustrative Impact:** A hypothetical 10% recovery among the observed 'ADD_TO_CART'-ending sessions would correspond to approximately **650 additionalsessions reaching a transaction record**, before accounting for order value,campaign cost, or incremental conversion effects.
 
 ---
 
-## 🔄 Operational & Planning Relevance
+## 🧠 Analytical Skills Demonstrated
 
-This project demonstrates analytical capabilities transferable to data-driven
-operational and planning roles:
-
-| Project Capability | Transferable Application |
+| Capability | Evidence in This Project |
 | --- | --- |
-| Performance analysis across regions and customer segments | Identifying meaningful variations and exceptions requiring investigation |
-| KPI monitoring through Tableau dashboards | Tracking operational indicators and communicating performance trends |
-| Funnel and non-converting session analysis | Detecting process bottlenecks and prioritizing high-impact issues |
-| Payment-system hypothesis validation | Distinguishing systemic problems from behavioral or segment-specific factors |
-| Data limitation assessment | Evaluating data reliability before making operational recommendations |
-
-**Core Principle:** Effective operational decision-making requires identifying
-meaningful variations, validating their underlying causes, prioritizing high-impact
-issues, and translating findings into measurable corrective actions.
+| Data-grain validation | Re-aggregated transaction-line records to booking level before calculating KPIs |
+| KPI monitoring | Tracked daily payment success rates and purchasing-customer volume |
+| Segment analysis | Compared booking-level outcomes across regions |
+| Event-sequence analysis | Built an ordered session funnel using timestamped clickstream events |
+| Data-quality assessment | Quantified session overlap and limited conclusions to the observed sample |
+| Action prioritization | Isolated cart-ending sessions and translated the finding into testable interventions |
 
 ---
 
 ## 📂 Project Structure
 
-**queries**
-- 01_transaction_level.sql
-- 02_daily_success_rate.sql
-- 03_success_rate_by_region.sql
-- 04_funnel_analysis.sql
-- 05_dropoff_last_event.sql
+queries/
+├── 01_booking_level.sql
+├── 02_daily_success_rate.sql
+├── 03_daily_purchasing_customers.sql
+├── 04_success_rate_by_region.sql
+├── 05_funnel_analysis.sql
+├── 06_session_overlap_check.sql
+└── 07_dropoff_last_event.sql
 
-*All SQL queries use SQLite syntax with CTEs and window functions for multi-stage analysis.*
+The analysis uses SQLite CTEs, conditional aggregation, joins, and window functions.
 
 ---
 
 ## 📊 Dashboard Preview
 
-### 1. Daily Purchasing Users Trend
+### 1.Daily Purchasing Customers Trend
 ![DAU Trend](1_dau_trend.png)
-*Tracked daily purchasing customer volume over time to establish transaction activity trends.*
+*Tracked customers with at least one successful booking by day; this metric is not platform-wide DAU.*
 
-### 2. Payment Success Rate Monitoring
+### 2.Payment Success Rate Monitoring
 ![Daily Success Rate](2_daily_success_rate.png)
-*Validated 95.7% success rate stability, indicating no major payment-system issue in the available data.*
+*Monitored booking-level payment success rates over time.*
 
 ### 3. Regional Performance Breakdown
 ![Success Rate by Region](3_success_rate_by_region.png)
-*Confirmed consistent performance across geographies and devices*
+*Found limited regional variation in booking-level payment success rates.*
 
-### 4. Drop-Off Stage Analysis
+### 4. Drop-Off Last-Event Analysis
 ![Drop-Off Analysis](4_dropoff_analysis.png)
-*Identified cart abandonment (15.3%) as a high-priority intervention opportunity.*
+*Found that 15.3% of sessions with no transaction record ended at 'ADD_TO_CART'.*
 
-### 5. Full Funnel Overview
+### 5. Milestone Funnel Overview
 ![Funnel Overview](5_funnel_overview.png)
-*End-to-end conversion flow showing volume loss at each stage*
+*Visualized progression across 'HOMEPAGE' → 'ADD_TO_CART' → 'BOOKING'.*
+
+Coverage note: Approximately 95% of clickstream sessions overlap with sessionsin the transactions data. The funnel therefore describes a transaction-heavy sampleand should not be interpreted as a platform-wide conversion benchmark.
 
 ---
 
 ## 🛠️ Technical Implementation
 
 **SQL Techniques Used:**
-- Window functions for event sequencing
-- CTEs for multi-stage funnel construction
-- CASE statements for session classification
-- LEFT JOINs to isolate non-converting behavior
+- Booking-level aggregation to control duplicate counting
+- CTEs for reusable analytical stages
+- Conditional aggregation for KPI calculation
+- Ordered event timestamps for milestone-funnel construction
+- 'ROW_NUMBER()' to assign one final event per session
+- 'NOT EXISTS' to isolate sessions with no transaction record
 
 **Tableau Features:**
-- Calculated fields for conversion rate metrics
-- Parameter-driven filtering (date range, region)
-- Dual-axis charts for trend + benchmark comparison
+- Calculated fields for conversion and payment-success metrics
+- Date and region filters
+- Trend and benchmark comparisons
 
 ---
 
 ## 📌 Key Takeaways
 
-1. **Data-driven prioritization:** Shifted focus from payment system to user behavior 
-   after quantifying technical vs behavioral failure rates
+1. **Correct analytical grain:** Recalculated payment KPIs at booking level rather than transaction-line level.
 
-2. **High-leverage thinking:** Identified cart abandonment as a priority intervention
-   point based on strong purchase intent and a clearly measurable drop-off signal.
+2. **Evidence-led redirection:** Shifted the investigation from payment processing to pre-transaction behavior after validating stable payment KPIs.
 
-3. **Operational relevance:** Demonstrated a structured approach to KPI monitoring,
-   exception identification, root-cause investigation, and corrective action
-   prioritization.
+3. **Responsible interpretation:** Identified sample bias through session-overlap analysis and avoided treating the funnel as a platform-wide benchmark.
+
+4. **Actionable prioritization:** Isolated cart-ending sessions as a high-intent group for targeted recovery testing.
+
