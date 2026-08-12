@@ -13,7 +13,7 @@ Analyzed 852,584 transaction records and 12.8 million clickstream events from an
 - `customer` — 100,000 rows
 - `product` — 42,388 rows
 
-**Tools:** SQL (SQLite), Tableau
+**Tools:** SQL (SQLite)
 
 ---
 
@@ -88,7 +88,6 @@ Analyzed 852,584 transaction records and 12.8 million clickstream events from an
 | Capability | Evidence in This Project |
 | --- | --- |
 | Data-grain validation | Re-aggregated transaction-line records to booking level before calculating KPIs |
-| KPI monitoring | Tracked daily payment success rates and purchasing-customer volume |
 | Segment analysis | Compared booking-level outcomes across regions |
 | Event-sequence analysis | Built an ordered session funnel using timestamped clickstream events |
 | Data-quality assessment | Quantified session overlap and limited conclusions to the observed sample |
@@ -111,32 +110,6 @@ The analysis uses SQLite CTEs, conditional aggregation, joins, and window functi
 
 ---
 
-## 📊 Dashboard Preview
-
-### 1. Daily Purchasing Customers Trend
-![DAU Trend](1_dau_trend.png)
-*Tracked customers with at least one successful booking by day; this metric is not platform-wide DAU.*
-
-### 2. Payment Success Rate Monitoring
-![Daily Success Rate](2_daily_success_rate.png)
-*Monitored booking-level payment success rates over time.*
-
-### 3. Regional Performance Breakdown
-![Success Rate by Region](3_success_rate_by_region.png)
-*Found limited regional variation in booking-level payment success rates.*
-
-### 4. Drop-Off Last-Event Analysis
-![Drop-Off Analysis](4_dropoff_analysis.png)
-*Found that 15.3% of sessions with no transaction record ended at `ADD_TO_CART`.*
-
-### 5. Milestone Funnel Overview
-![Funnel Overview](5_funnel_overview.png)
-*Visualized progression across `HOMEPAGE` → `ADD_TO_CART` → `BOOKING`.*
-
-Coverage note: Approximately 95% of clickstream sessions overlap with sessions in the transactions data. The funnel therefore describes a transaction-heavy sample and should not be interpreted as a platform-wide conversion benchmark.
-
----
-
 ## 🛠️ Technical Implementation
 
 **SQL Techniques Used:**
@@ -146,11 +119,6 @@ Coverage note: Approximately 95% of clickstream sessions overlap with sessions i
 - Ordered event timestamps for milestone-funnel construction
 - `ROW_NUMBER()` to assign one final event per session
 - `NOT EXISTS` to isolate sessions with no transaction record
-
-**Tableau Features:**
-- Calculated fields for conversion and payment-success metrics
-- Date and region filters
-- Trend and benchmark comparisons
 
 ---
 
