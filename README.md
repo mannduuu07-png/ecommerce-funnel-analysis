@@ -99,13 +99,13 @@ Analyzed 852,584 transaction records and 12.8 million clickstream events from an
 ## 📂 Project Structure
 
 **queries**
-01_booking_level.sql
-02_daily_success_rate.sql
-03_daily_purchasing_customers.sql
-04_success_rate_by_region.sql
-05_funnel_analysis.sql
-06_session_overlap_check.sql
-07_dropoff_last_event.sql
+- 01_booking_level.sql
+- 02_daily_success_rate.sql
+- 03_daily_purchasing_customers.sql
+- 04_success_rate_by_region.sql
+- 05_funnel_analysis.sql
+- 06_session_overlap_check.sql
+- 07_dropoff_last_event.sql
 
 The analysis uses SQLite CTEs, conditional aggregation, joins, and window functions.
 
