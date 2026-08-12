@@ -34,7 +34,7 @@ point to recover it?
 - **Goal:** Assess whether payment-system performance is a major driver before investigating behavioral factors
 
 ### 2. Funnel Analysis
-- Built 5-stage event sequence tracking to quantify drop-off at each decision point
+- Built 3-stage event sequence tracking to quantify drop-off at each decision point
 - **Goal:** Identify where potential revenue is being lost
 
 ### 3. Non-Converting Session Segmentation
