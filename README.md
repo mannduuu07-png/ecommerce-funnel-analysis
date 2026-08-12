@@ -34,7 +34,7 @@ point to recover it?
 - **Goal:** Assess whether payment-system performance is a major driver before investigating behavioral factors
 
 ### 2. Funnel Analysis
-- Built 3-stage event sequence tracking to quantify drop-off at each decision point
+- Built a four-stage ordered funnel sequence tracking to quantify drop-off at each decision point
 - **Goal:** Identify where potential revenue is being lost
 
 ### 3. Non-Converting Session Segmentation
@@ -48,7 +48,7 @@ point to recover it?
 
 ### ✅ No Major Payment-System Issue Detected
 - Payment success rate: **95.7%** (stable across regions and devices)
-- Minimal gap between new vs returning users (0.04%p)
+- Minimal gap between single-booking and repeat-booking customer groups (0.04%p)
 - **Insight:** The observed leakage appears more closely related to pre-purchase behavior than to payment processing or specific user segments.
 
 ### 🚨 Cart Abandonment is a High-Priority Recovery Opportunity
@@ -112,9 +112,9 @@ issues, and translating findings into measurable corrective actions.
 
 ## 📊 Dashboard Preview
 
-### 1. Daily Active Users (DAU) Trend
+### 1. Daily Purchasing Users Trend
 ![DAU Trend](1_dau_trend.png)
-*Tracked platform engagement over time to establish baseline activity levels*
+*Tracked daily purchasing customer volume over time to establish transaction activity trends.*
 
 ### 2. Payment Success Rate Monitoring
 ![Daily Success Rate](2_daily_success_rate.png)
