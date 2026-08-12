@@ -3,7 +3,6 @@ WITH booking_level AS (
         booking_id,
         customer_id,
         MIN(created_at) AS created_at,
-        MAX(payment_method) AS payment_method,
         CASE 
             WHEN SUM(CASE WHEN payment_status = 'Failed' THEN 1 ELSE 0 END) > 0 
             THEN 'Failed' 
@@ -12,5 +11,13 @@ WITH booking_level AS (
     FROM transactions
     GROUP BY booking_id, customer_id
 )
-SELECT *
-FROM booking_level;
+SELECT
+    DATE(created_at) AS dt,
+    ROUND(
+        SUM(CASE WHEN payment_status = 'Success' THEN 1 ELSE 0 END) * 1.0
+        / COUNT(*),
+        4
+    ) AS success_rate
+FROM booking_level
+GROUP BY 1
+ORDER BY 1;
