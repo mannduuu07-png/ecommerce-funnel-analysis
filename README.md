@@ -1,4 +1,4 @@
-# eCommerce Revenue Leakage & Conversion Optimization Analysis
+# eCommerce Funnel & Conversion Optimization Analysis
 
 ## Overview
 Analyzed 852,584 transaction records and 12.8 million clickstream events from an Indonesian eCommerce platform to evaluate payment reliability, trace purchase-funnel behavior, and identify an actionable conversion-recovery opportunity.
@@ -21,7 +21,7 @@ Analyzed 852,584 transaction records and 12.8 million clickstream events from an
 1. Is the booking-level payment success rate stable over time and across regions?
 2. How do sessions progress through the major purchase milestones?
 3. Where do sessions with no transaction record end their journeys?
-. How does the dataset's session coverage affect interpretation of the funnel?
+4. How does the dataset's session coverage affect interpretation of the funnel?
 
 ---
 
@@ -42,9 +42,9 @@ Analyzed 852,584 transaction records and 12.8 million clickstream events from an
 - Measured session progression using the first timestamp recorded for each event
 - **Goal:** Evaluate observed movement through major purchase milestones
 
-### . Coverage and Last-Event Analysis
+### 4. Coverage and Last-Event Analysis
 - Measured the overlap between clickstream sessions and sessions appearing in transactions
-- Isolated 2,621 clickstream sessions with no transaction record
+- Isolated 42,621 clickstream sessions with no transaction record
 - Classified each session by its final recorded event
 - **Goal:** Interpret the unusually high funnel rates and identify a practical recovery target
 
@@ -63,7 +63,7 @@ Analyzed 852,584 transaction records and 12.8 million clickstream events from an
 - **Insight:** The headline funnel is useful for describing the recorded sample but should not be treated as a representative platform-wide conversion rate
 
 ### 🚨 Cart-Ending Sessions Are a High-Priority Recovery Opportunity
-- Identified **2,621 clickstream sessions with no transaction record**
+- Identified ** clickstream sessions with no transaction record**
 - **15.4% ended at `ADD_TO_CART`**
 - These sessions reached a late purchase milestone but did not generate a transaction record
 - **Insight:** Cart-ending sessions represent an actionable, high-intent group for targeted recovery efforts
@@ -74,7 +74,7 @@ Analyzed 852,584 transaction records and 12.8 million clickstream events from an
 
 **Prioritize cart abandonment recovery** as a key conversion-optimization lever:
 
-- **Tactic 1:** Send time-sensitive reminders within 2– hours of cart activity
+- **Tactic 1:** Send time-sensitive reminders within 2–4 hours of cart activity
 - **Tactic 2:** Test personalized incentives, prioritizing higher-value carts when cart-value data is available
 - **Tactic 3:** A/B test urgency-based versus incentive-based messaging
 
@@ -101,7 +101,7 @@ Analyzed 852,584 transaction records and 12.8 million clickstream events from an
 - 01_booking_level.sql
 - 02_daily_success_rate.sql
 - 03_daily_purchasing_customers.sql
-- 0_success_rate_by_region.sql
+- 04_success_rate_by_region.sql
 - 05_funnel_analysis.sql
 - 06_session_overlap_check.sql
 - 07_dropoff_last_event.sql
@@ -112,7 +112,8 @@ The analysis uses SQLite CTEs, conditional aggregation, joins, and window functi
 
 ## 📊 Dashboard Preview
 
-![eCommerce Funnel and Conversion Analysis Dashboard](ecommerce_funnel_conversion_optimization_dashboard.png)
+![eCommerce Funnel & Conversion Optimization Dashboard](ecommerce_funnel_conversion_optimization_dashboard.png)
+
 *Executive dashboard summarizing booking-level payment reliability, non-transaction session behavior, observed funnel progression, and regional performance.*
 
 > **Coverage note:** 95.2% of clickstream sessions overlap with sessions in the transactions data. The funnel therefore describes a transaction-heavy sample and should not be interpreted as a platform-wide conversion benchmark.
