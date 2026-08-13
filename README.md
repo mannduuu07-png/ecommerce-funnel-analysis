@@ -63,7 +63,7 @@ Analyzed 852,584 transaction records and 12.8 million clickstream events from an
 - **Insight:** The headline funnel is useful for describing the recorded sample but should not be treated as a representative platform-wide conversion rate
 
 ### 🚨 Cart-Ending Sessions Are a High-Priority Recovery Opportunity
-- Identified ** clickstream sessions with no transaction record**
+- Identified **clickstream sessions with no transaction record**
 - **15.4% ended at `ADD_TO_CART`**
 - These sessions reached a late purchase milestone but did not generate a transaction record
 - **Insight:** Cart-ending sessions represent an actionable, high-intent group for targeted recovery efforts
