@@ -8,8 +8,8 @@ Analyzed 852,584 transaction records and 12.8 million clickstream events from an
 ---
 
 ## 📊 Data Sources
-- `transactions` — 852,584 rows (2016.07–2022.07)
-- `click_stream` — 12,833,602 rows (2016.07–2022.08)
+- `transactions` — 852,584 rows (2016-06-30–2022-07-31 UTC)
+- `click_stream` — 12,833,602 rows (2016-06-30–2022-08-01 UTC)
 - `customer` — 100,000 rows
 - `product` — 42,388 rows
 
@@ -58,13 +58,13 @@ Analyzed 852,584 transaction records and 12.8 million clickstream events from an
 - **Insight:** The available data did not reveal a major time- or region-specific payment issue, shifting attention toward pre-transaction behavior
 
 ### ⚠️ Headline Funnel Rates Are Affected by Data Coverage
-- Approximately **95% of clickstream sessions also appear in the transactions data**
+- Approximately **95.2% of clickstream sessions also appear in the transactions data**
 - The three-stage funnel therefore produced unusually high progression rates of approximately 97–98%
 - **Insight:** The headline funnel is useful for describing the recorded sample but should not be treated as a representative platform-wide conversion rate
 
 ### 🚨 Cart-Ending Sessions Are a High-Priority Recovery Opportunity
 - Identified **42,621 clickstream sessions with no transaction record**
-- **15.3% ended at `ADD_TO_CART`**
+- **15.4% ended at `ADD_TO_CART`**
 - These sessions reached a late purchase milestone but did not generate a transaction record
 - **Insight:** Cart-ending sessions represent an actionable, high-intent group for targeted recovery efforts
 
@@ -79,7 +79,7 @@ Analyzed 852,584 transaction records and 12.8 million clickstream events from an
                 value data is available
 - **Tactic 3:** A/B test urgency-based versus incentive-based messaging
 
-**Illustrative Impact:** A hypothetical 10% recovery among the observed `ADD_TO_CART`-ending sessions would correspond to approximately **650 additional sessions reaching a transaction record**, before accounting for order value, campaign cost, or incremental conversion effects.
+**Illustrative Impact:** A hypothetical 10% recovery among the observed `ADD_TO_CART`-ending sessions would correspond to approximately **658 additional sessions reaching a transaction record**, before accounting for order value, campaign cost, or incremental conversion effects.
 
 ---
 
