@@ -112,8 +112,7 @@ The analysis uses SQLite CTEs, conditional aggregation, joins, and window functi
 
 ## 📊 Dashboard Preview
 
-![eCommerce Funnel and Conversion Analysis Dashboard](eCommerce_Analysis_Dashboard.png)
-
+![eCommerce Funnel and Conversion Analysis Dashboard](ecommerce_funnel_conversion_optimization_dashboard.png)
 *Executive dashboard summarizing booking-level payment reliability, non-transaction session behavior, observed funnel progression, and regional performance.*
 
 > **Coverage note:** 95.2% of clickstream sessions overlap with sessions in the transactions data. The funnel therefore describes a transaction-heavy sample and should not be interpreted as a platform-wide conversion benchmark.
