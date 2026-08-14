@@ -1,16 +1,16 @@
-============================================================
- 06_session_overlap_check.sql
- Session coverage and linkage validation
- ============================================================
+-- ============================================================
+-- 06_session_overlap_check.sql
+-- Session coverage and linkage validation
+-- ============================================================
 
 
-------------------------------------------------------------
- 1. Clickstream-to-transaction session overlap
-------------------------------------------------------------
-Quantify how much the clickstream sample overlaps with
-sessions appearing in transactions.
-A high overlap indicates that the clickstream data is weighted
-toward sessions that generated a transaction record.
+-- ------------------------------------------------------------
+-- 1. Clickstream-to-transaction session overlap
+-- ------------------------------------------------------------
+-- Quantify how much the clickstream sample overlaps with
+-- sessions appearing in transactions.
+-- A high overlap indicates that the clickstream data is weighted
+-- toward sessions that generated a transaction record.
 
 WITH click_sessions AS (
     SELECT DISTINCT session_id
@@ -35,9 +35,9 @@ FROM click_sessions AS c
 LEFT JOIN transaction_sessions AS t
     ON c.session_id = t.session_id;
 
-Result:
-Approximately 95.2% of clickstream sessions also appear
-in the transactions data.
+-- Result:
+-- Approximately 95.2% of clickstream sessions also appear
+-- in the transactions data.
 
 
 -- ------------------------------------------------------------
