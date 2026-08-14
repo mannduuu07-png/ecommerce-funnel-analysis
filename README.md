@@ -44,6 +44,8 @@ Analyzed 852,584 transaction records and 12.8 million clickstream events from an
 
 ### 4. Coverage and Last-Event Analysis
 - Measured the overlap between clickstream sessions and sessions appearing in transactions
+- Validated transaction-to-clickstream linkage: 852,582 of 852,584 transaction sessions had corresponding clickstream records
+- Identified 2 transaction sessions with no corresponding clickstream activity and documented them as source-data linkage exceptions
 - Isolated 42,621 clickstream sessions with no transaction record
 - Classified each session by its final recorded event
 - **Goal:** Interpret the unusually high funnel rates and identify a practical recovery target
@@ -59,6 +61,7 @@ Analyzed 852,584 transaction records and 12.8 million clickstream events from an
 
 ### ⚠️ Headline Funnel Rates Are Affected by Data Coverage
 - Approximately **95.2% of clickstream sessions also appear in the transactions data**
+- Conversely, transaction-to-clickstream linkage was nearly complete: 852,582 of 852,584 transaction sessions had corresponding clickstream records. The 2 unmatched sessions explain the difference between the transaction count and the 852,582 observed `BOOKING` sessions in the clickstream funnel
 - The three-stage funnel therefore produced unusually high progression rates of approximately 97–98%
 - **Insight:** The headline funnel is useful for describing the recorded sample but should not be treated as a representative platform-wide conversion rate
 
@@ -107,6 +110,7 @@ Analyzed 852,584 transaction records and 12.8 million clickstream events from an
 - 07_dropoff_last_event.sql
 
 The analysis uses SQLite CTEs, conditional aggregation, joins, and window functions.
+Session-linkage validation was also performed using anti-joins to reconcile transaction and clickstream coverage.
 
 ---
 
@@ -129,6 +133,7 @@ The analysis uses SQLite CTEs, conditional aggregation, joins, and window functi
 - Ordered event timestamps for milestone-funnel construction
 - `ROW_NUMBER()` to assign one final event per session
 - `NOT EXISTS` to isolate sessions with no transaction record
+- Anti-join validation to identify transaction sessions with no corresponding clickstream records
 
 ---
 
