@@ -1,3 +1,5 @@
+-- Session coverage and linkage validation
+
 -- ------------------------------------------------------------
 -- 1. Clickstream-to-transaction session overlap
 -- ------------------------------------------------------------
