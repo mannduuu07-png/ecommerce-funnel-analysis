@@ -84,3 +84,49 @@ FROM unmatched_transactions;
 -- unmatched_customers             = 1
 -- 852,582 of 852,584 transaction sessions therefore have
 -- corresponding clickstream records.
+
+
+
+-- ------------------------------------------------------------
+-- 4. Power BI session coverage summary
+-- ------------------------------------------------------------
+-- Return one summary row for dashboard reporting.
+
+WITH click_sessions AS (
+    SELECT DISTINCT session_id
+    FROM click_stream
+    WHERE session_id IS NOT NULL
+),
+transaction_sessions AS (
+    SELECT DISTINCT session_id
+    FROM transactions
+    WHERE session_id IS NOT NULL
+),
+overlap AS (
+    SELECT COUNT(*) AS overlapping_sessions
+    FROM click_sessions AS c
+    INNER JOIN transaction_sessions AS t
+        ON c.session_id = t.session_id
+),
+unmatched_transactions AS (
+    SELECT COUNT(*) AS unmatched_transaction_sessions
+    FROM transaction_sessions AS t
+    LEFT JOIN click_sessions AS c
+        ON t.session_id = c.session_id
+    WHERE c.session_id IS NULL
+)
+SELECT
+    (SELECT COUNT(*) FROM click_sessions) AS clickstream_sessions,
+    (SELECT COUNT(*) FROM transaction_sessions) AS transaction_sessions,
+    (SELECT overlapping_sessions FROM overlap) AS overlapping_sessions,
+    ROUND(
+        (SELECT overlapping_sessions FROM overlap) * 1.0
+        / NULLIF((SELECT COUNT(*) FROM click_sessions), 0),
+        4
+    ) AS clickstream_overlap_rate,
+    (
+        (SELECT COUNT(*) FROM click_sessions)
+        - (SELECT overlapping_sessions FROM overlap)
+    ) AS non_transaction_sessions,
+    (SELECT unmatched_transaction_sessions FROM unmatched_transactions)
+        AS unmatched_transaction_sessions;
