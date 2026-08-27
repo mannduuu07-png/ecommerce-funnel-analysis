@@ -116,11 +116,19 @@ Session-linkage validation was also performed using anti-joins to reconcile tran
 
 ## 📊 Dashboard Preview
 
-![eCommerce Funnel & Conversion Optimization Dashboard](eCommerce%20Funnel%20%26%20Conversion%20Analysis_Tableau.png)
+### Tableau
+
+![eCommerce Funnel & Conversion Optimization Dashboard](ecommerce_funnel_tableau.png)
 
 *Executive dashboard summarizing booking-level payment reliability, non-transaction session behavior, observed funnel progression, and regional performance.*
 
 > **Coverage note:** 95.2% of clickstream sessions overlap with sessions in the transactions data. The funnel therefore describes a transaction-heavy sample and should not be interpreted as a platform-wide conversion benchmark.
+
+### Power BI
+
+*Recreated the analysis in Power BI with a conversion overview and a separate payment diagnostics view.*
+
+[📄 View full Power BI dashboard (2 pages)](ecommerce_funnel_powerbi.pdf)
 
 ---
 
