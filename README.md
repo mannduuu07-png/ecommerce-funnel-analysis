@@ -116,7 +116,7 @@ Session-linkage validation was also performed using anti-joins to reconcile tran
 
 ## 📊 Dashboard Preview
 
-![eCommerce Funnel & Conversion Optimization Dashboard](ecommerce_funnel_conversion_optimization_dashboard.png)
+![eCommerce Funnel & Conversion Optimization Dashboard](eCommerce Funnel & Conversion Analysis_Tableau.png)
 
 *Executive dashboard summarizing booking-level payment reliability, non-transaction session behavior, observed funnel progression, and regional performance.*
 
