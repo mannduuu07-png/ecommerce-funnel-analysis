@@ -126,7 +126,7 @@ Session-linkage validation was also performed using anti-joins to reconcile tran
 
 ### Power BI
 
-*Recreated the analysis in Power BI with a conversion overview and a separate payment diagnostics view.*
+*Extended the analysis in Power BI with a conversion overview and a separate payment diagnostics view.*
 
 [📄 View full Power BI dashboard (2 pages)](ecommerce_funnel_powerbi.pdf)
 
