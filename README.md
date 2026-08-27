@@ -13,7 +13,7 @@ Analyzed 852,584 transaction records and 12.8 million clickstream events from an
 - `customer` — 100,000 rows
 - `product` — 42,388 rows
 
-**Tools:** SQL (SQLite), Tableau
+**Tools:** SQL (SQLite), Tableau, PowerBI
 
 ---
 
