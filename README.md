@@ -70,6 +70,7 @@ Analyzed 852,584 transaction records and 12.8 million clickstream events from an
 - **15.4% ended at `ADD_TO_CART`**
 - These sessions reached a late purchase milestone but did not generate a transaction record
 - **Insight:** Cart-ending sessions represent an actionable, high-intent group for targeted recovery efforts
+> **Scope note:** The last-event analysis is session-level and includes only sessions with no matching transaction record. A transaction-linked session may still contain a later unfinished cart journey, which is not captured by the current classification.
 
 ---
 
